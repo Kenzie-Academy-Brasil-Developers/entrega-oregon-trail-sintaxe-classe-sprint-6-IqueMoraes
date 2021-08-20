@@ -5,12 +5,26 @@ class Traveler {
         this._healthy = true;
     }
 
+    set food(value){
+        this._food = value;
+    }
+    get food(){
+        return this._food;
+    }
+
+    set healthy(value){
+        this._healthy = value;
+    }
+    get healthy(){
+        return this._healthy;
+    }
+
     hunt = () => {
-        this._food += 2
+        this.food += 2
     }
 
     eat = () => {
-        return this._food > 0 ? this._food-- : this._healthy = false
+        return this.food > 0 ? this.food-- : this.healthy = false;
     }
 }
 
@@ -18,15 +32,20 @@ class Traveler {
 class Wagon {
     constructor(capacidade){
         this.capacity = capacidade;
-        this.passengers = []
+        this._passengers = []
     }
-
+    set passengers(traveler){
+        this._passengers.push(traveler);
+    }
+    get passengers(){
+        return this._passengers;
+    }
     getAvailableSeatCount = ()=>{
         return this.capacity - this.passengers.length
     }
 
     join = (traveler) => {
-        return this.getAvailableSeatCount() > 0 ? this.passengers.push(traveler) : console.log("There's no empty seat on this Wagon")
+        return this.getAvailableSeatCount() > 0 ? this.passengers=traveler : console.log("There's no empty seat on this Wagon")
     }
 
     shouldQuarantine = () => {
