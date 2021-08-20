@@ -23,6 +23,9 @@ Seguindo este exemplo, crie dois tipos diferentes de classes usando funções co
 
 ## Traveler
 
+
+
+
 Um Traveler (viajante) tem algumas propriedades:  
 
 - um name (nome) (string) que deve ser fornecido como parâmetro para o construtor. 
